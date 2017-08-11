@@ -3,10 +3,19 @@
 require "model/Model.php";
 
 class Controller {
-  public function Index() {
-    $model = new Model();
-    $dados = $model->ListarDados();
 
-    include "view/View.php";
+  public function Index() {
+
+    include "view/Index.php";
+  }
+  public function Login() {
+
+    include "view/Login.php";
+  }
+  public function Painel() {
+    $model = new Model();
+    $usuario = $model->UsuarioLogado();
+
+    include "view/Painel.php";
   }
 }
